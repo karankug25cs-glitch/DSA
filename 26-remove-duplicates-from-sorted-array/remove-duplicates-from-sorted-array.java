@@ -1,16 +1,13 @@
 class Solution {
-    public int removeDuplicates(int[] nums) {
-        if (nums.length == 0) return 0;
-
-        int slow = 0; // last position of a unique element
-
-        for (int fast = 1; fast < nums.length; fast++) {
-            if (nums[fast] != nums[slow]) {
-                slow++;
-                nums[slow] = nums[fast];
+    public int removeDuplicates(int[] arr) {
+        int n = arr.length;
+        int k = 1;
+        for(int i=1; i<n; i++){
+            if(arr[i] != arr[k-1]){
+                arr[k] = arr[i];
+                k++;
             }
         }
-
-        return slow + 1; // number of unique elements
+        return k;
     }
 }
