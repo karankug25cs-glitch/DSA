@@ -2,11 +2,13 @@ class Solution {
     public int removeDuplicates(int[] arr) {
         int n = arr.length;
         int k = 1;
-        for(int i=1; i<n; i++){
+        int i =1;
+        while(i<n){
             if(arr[i] != arr[k-1]){
                 arr[k] = arr[i];
                 k++;
             }
+            i++;
         }
         return k;
     }
