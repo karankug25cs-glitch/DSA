@@ -26,16 +26,13 @@ class Solution {
                 temp2 = temp2.next;
             }
         }
-        while(temp1 != null){
-            curr.next = new ListNode(temp1.val);
-            curr = curr.next;
-            temp1 = temp1.next;
-        }
-        while(temp2 != null){
-            curr.next = new ListNode(temp2.val);
-            curr = curr.next;
-            temp2 = temp2.next;
-        }
+        
+      if(temp1 != null){
+        curr.next = temp1;
+      }
+      if(temp2 != null){
+        curr.next = temp2;
+      }
         return merged.next;
     }
 }
